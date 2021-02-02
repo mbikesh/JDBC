@@ -1,15 +1,11 @@
-package org.example.Statments;
+package org.demo.Statments;
 
-import org.example.util.DbUtil;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class createTable {
-
-    public static final String SQL="create table demo_tbl(id int not null auto_increment PRIMARY KEY , user_name varchar(255), password varchar (255))";
+public class DeleteTable {
+    public static final String SQL="DELETE from demo_tbl where id=1";
+    private static org.demo.util.DbUtil DbUtil;
 
     public static void main(String[] args) {
         try (
@@ -19,7 +15,7 @@ public class createTable {
 
         ){
             statement.executeUpdate(SQL);
-            System.out.println("Table created");
+            System.out.println("Data deleted");
 
 
         } catch (SQLException | ClassNotFoundException e) {

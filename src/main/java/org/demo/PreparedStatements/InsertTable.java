@@ -1,10 +1,9 @@
-package org.example.PreparedStatements;
+package org.demo.PreparedStatements;
 
-import org.example.util.DbUtil;
+import org.demo.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class InsertTable {
     public static final String SQL="insert into demo_tbl(user_name,password,email,phone) VALUES (?,?,?,?)";

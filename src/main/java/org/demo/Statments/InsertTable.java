@@ -1,12 +1,14 @@
-package org.example.Statments;
+package org.demo.Statments;
 
-import org.example.util.DbUtil;
+
+import org.demo.util.DbUtil;
 
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class AlterTable {
-    public static final String SQL="alter table demo_tbl add email varchar(255)";
+public class InsertTable {
+
+    public static final String SQL="insert into demo_tbl(user_name,password,email) VALUES ('Name','Pass','Email')";
 
     public static void main(String[] args) {
         try (
@@ -16,7 +18,7 @@ public class AlterTable {
 
         ){
             statement.executeUpdate(SQL);
-            System.out.println("Email added");
+            System.out.println("Data Inserted");
 
 
         } catch (SQLException | ClassNotFoundException e) {

@@ -1,23 +1,24 @@
-package org.example.Statments;
+package org.demo.PreparedStatements;
 
-import org.example.util.DbUtil;
+import org.demo.util.DbUtil;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class SelectTable {
-    public static final String SQL="select * from demo_tbl";
-    private static org.example.util.DbUtil DbUtil;
+    public static final String SQL="Select * from demo_tbl where id=?";
 
     public static void main(String[] args) {
         try (
-//                Connection connection= DriverManager.getConnection(URL,USER_NAME,PASSWORD);
 
-                Statement statement= DbUtil.getConnection().createStatement();
+                PreparedStatement preparedStatement= DbUtil.getConnection().prepareStatement(SQL);
 
         ){
-           ResultSet resultSet = statement.executeQuery(SQL);
+            preparedStatement.setInt(1,3);
+            preparedStatement.executeQuery();
+            ResultSet resultSet=preparedStatement.executeQuery();
+
             while (resultSet.next()){
                 System.out.println("Id is: "+resultSet.getInt("id"));
                 System.out.println("Name is: "+resultSet.getString("user_name"));

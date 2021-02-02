@@ -1,10 +1,9 @@
-package org.example.PreparedStatements;
+package org.demo.PreparedStatements;
 
-import org.example.util.DbUtil;
+import org.demo.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class AlterTable {
     public static final String SQL="alter table demo_tbl add phone int (20)";

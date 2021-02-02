@@ -1,14 +1,13 @@
-package org.example.Statments;
+package org.demo.Statments;
 
-
-import org.example.util.DbUtil;
+import org.demo.util.DbUtil;
 
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InsertTable {
+public class createTable {
 
-    public static final String SQL="insert into demo_tbl(user_name,password,email) VALUES ('Name','Pass','Email')";
+    public static final String SQL="create table demo_tbl(id int not null auto_increment PRIMARY KEY , user_name varchar(255), password varchar (255))";
 
     public static void main(String[] args) {
         try (
@@ -18,7 +17,7 @@ public class InsertTable {
 
         ){
             statement.executeUpdate(SQL);
-            System.out.println("Data Inserted");
+            System.out.println("Table created");
 
 
         } catch (SQLException | ClassNotFoundException e) {
