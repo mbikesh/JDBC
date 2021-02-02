@@ -1,13 +1,12 @@
-package PreparedStatements;
+package org.example.PreparedStatements;
 
-import util.DbUtil;
+import org.example.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class InsertTable {
-    public static final String SQL="insert into demo_tbl(user_name,password) VALUES (?,?)";
+public class DeleteTable {
+    public static final String SQL="Delete from demo_tbl where id=?";
 
     public static void main(String[] args) {
         try (
@@ -15,11 +14,11 @@ public class InsertTable {
                 PreparedStatement preparedStatement= DbUtil.getConnection().prepareStatement(SQL);
 
         ){
-            preparedStatement.setString(1,"userName");
-            preparedStatement.setString(2,"pass");
+
+            preparedStatement.setInt(1,2);
             preparedStatement.executeUpdate();
 
-            System.out.println("Data Inserted");
+            System.out.println("Data Deleted");
 
 
         } catch (SQLException | ClassNotFoundException e) {

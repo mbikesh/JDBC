@@ -1,6 +1,7 @@
 package org.example.Statments;
 
-import util.DbUtil;
+
+import org.example.util.DbUtil;
 
 import java.sql.SQLException;
 import java.sql.Statement;

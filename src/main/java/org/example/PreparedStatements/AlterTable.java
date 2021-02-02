@@ -1,12 +1,13 @@
-package PreparedStatements;
+package org.example.PreparedStatements;
 
-import util.DbUtil;
+import org.example.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-public class DeleteTable {
-    public static final String SQL="Delete from demo_tbl where id=?";
+public class AlterTable {
+    public static final String SQL="alter table demo_tbl add phone int (20)";
 
     public static void main(String[] args) {
         try (
@@ -15,10 +16,10 @@ public class DeleteTable {
 
         ){
 
-            preparedStatement.setInt(1,2);
+
             preparedStatement.executeUpdate();
 
-            System.out.println("Data Deleted");
+            System.out.println("Phone added");
 
 
         } catch (SQLException | ClassNotFoundException e) {
@@ -26,4 +27,5 @@ public class DeleteTable {
         }
 
     }
+
 }

@@ -1,13 +1,14 @@
 package org.example.Statments;
 
-import util.DbUtil;
+
+import org.example.util.DbUtil;
 
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class InsertTable {
 
-    public static final String SQL="insert into demo_tbl(user_name,password) VALUES ('Name','Pass')";
+    public static final String SQL="insert into demo_tbl(user_name,password,email) VALUES ('Name','Pass','Email')";
 
     public static void main(String[] args) {
         try (

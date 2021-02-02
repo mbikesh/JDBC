@@ -1,12 +1,13 @@
 package org.example.Statments;
 
-import util.DbUtil;
+import org.example.util.DbUtil;
 
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DeleteTable {
     public static final String SQL="DELETE from demo_tbl where id=1";
+    private static org.example.util.DbUtil DbUtil;
 
     public static void main(String[] args) {
         try (

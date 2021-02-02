@@ -1,6 +1,6 @@
-package PreparedStatements;
+package org.example.PreparedStatements;
 
-import util.DbUtil;
+import org.example.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

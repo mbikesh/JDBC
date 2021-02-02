@@ -1,6 +1,6 @@
 package org.example.Statments;
 
-import util.DbUtil;
+import org.example.util.DbUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 public class SelectTable {
     public static final String SQL="select * from demo_tbl";
+    private static org.example.util.DbUtil DbUtil;
 
     public static void main(String[] args) {
         try (

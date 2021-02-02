@@ -2,14 +2,11 @@ package org.example.Statments;
 
 import org.example.util.DbUtil;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class createTable {
-
-    public static final String SQL="create table demo_tbl(id int not null auto_increment PRIMARY KEY , user_name varchar(255), password varchar (255))";
+public class AlterTable {
+    public static final String SQL="alter table demo_tbl add email varchar(255)";
 
     public static void main(String[] args) {
         try (
@@ -19,7 +16,7 @@ public class createTable {
 
         ){
             statement.executeUpdate(SQL);
-            System.out.println("Table created");
+            System.out.println("Email added");
 
 
         } catch (SQLException | ClassNotFoundException e) {
