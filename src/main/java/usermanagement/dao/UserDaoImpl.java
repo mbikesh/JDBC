@@ -83,6 +83,7 @@ public class UserDaoImpl implements UserDao{
 
 
         try(PreparedStatement preparedStatement=DbUtil.getConnection().prepareStatement(QueryUtil.GET_BY_ID_SQL)) {
+            preparedStatement.setInt(1,id);
             ResultSet resultSet=preparedStatement.executeQuery();
 
             if (resultSet.next()){
